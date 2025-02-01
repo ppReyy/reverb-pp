@@ -24,36 +24,9 @@
         }
     </style>
 </head>
-<body>
-
-    <div class="player">
-        <h2>Now Playing</h2>
-        <audio id="audioPlayer" controls autoplay>
-            Your browser does not support the audio element.
-        </audio>
-    </div>
-
-    <script>
-        // Function to get music name from URL
-        function getMusicNameFromURL() {
-            let path = window.location.pathname; // Get path from URL
-            let musicName = path.split('/').pop(); // Extract last part
-            return decodeURIComponent(musicName); // Decode in case of special characters
-        }
-
-        // Set the music source dynamically
-        function setMusic() {
-            let musicName = getMusicNameFromURL();
-            if (musicName) {
-                let audioPlayer = document.getElementById('audioPlayer');
-                audioPlayer.src = `https://reverb-pp.netlify.app/assets/${musicName}.mp3`; // Update this path based on your actual file structure
-                audioPlayer.play(); 
-            }
-        }
-
-        // Run function when page loads
-        setMusic();
-    </script>
-
-</body>
+    <body>
+        <video controls autoplay loop name="media">
+            <source src="/assets/ROSE.mp3" type="audio/mpeg">            
+        </video>
+    </body>
 </html>
